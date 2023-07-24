@@ -1,0 +1,22 @@
+{
+  "name": "cypressgettingstarted",
+  "version": "1.0.0",
+  "description": "Understanding Cypress Features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senthiljaishankaran/Cypress-Getting-Started.git"
+  },
+  "author": "Senthil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senthiljaishankaran/Cypress-Getting-Started/issues"
+  },
+  "homepage": "https://github.com/senthiljaishankaran/Cypress-Getting-Started#readme",
+  "dependencies": {
+    "cypress": "^12.17.2"
+  }
+}
