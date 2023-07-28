@@ -42,18 +42,20 @@ describe('Drop-Down-Automation',()=>{
         // selecting the item from drop-down
         cy.get("#APjFqb").type('cypress automation')
 
+        // providing wait for the cypress to handle the google sign in pop up
+        cy.wait(3000)
+
         // Verifying the no.of items
         cy.get("div.wM6W7d>span").should('have.length',12)
 
-        cy.get("div.wM6W7d>span").contains("cypress automation tool").click()
+        // cy.get("div.wM6W7d>span").contains("cypress automation tool").click()
 
         // Using jquery method to select the element from the list
-        // this jquery will work once we handle the pop-up fo sign from google
-        // cy.get("div.wM6W7d>span").each(($el,index,$list)=>{
-        //     if($el.text =='cypress automation tool'){
-        //         cy.wrap($el).click()
-        //     }
-        // })
+        cy.get("div.wM6W7d>span").each(($el,index,$list)=>{
+            if($el.text() =='cypress automation tool'){
+                cy.wrap($el).click()
+            }
+        })
         
         //asserting the selected item
         cy.get("#APjFqb").should('have.value',"cypress automation tool")
