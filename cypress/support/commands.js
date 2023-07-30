@@ -39,12 +39,12 @@ Cypress.Commands.add('clicklink',(label)=>{
 })
 
 // Custom command to overwrite the custom method of contains that is case sensitive
-Cypress.Commands.overwrite('contains',(originalFn,subject,text,filter,options)=>{
-    if(text === 'object'){
-        options = text
-        text = filter
-        filter =undefined
-    }
-    options.matchCase=false
-    return originalFn(subject,text,filter,options)
-})
+// Cypress.Commands.overwrite('contains',(originalFn,subject,filter,text,options={})=>{
+//     if(typeof text === 'object'){
+//         options = text
+//         text = filter
+//         filter =undefined
+//     }
+//     options.matchCase=false
+//     return originalFn(subject,filter,text,options)
+// })
