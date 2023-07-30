@@ -32,3 +32,19 @@ Cypress.Commands.add('getIframe',(iframe)=>{
     .should('be.visible')
     .then(cy.wrap)
 })
+
+// Custom command to click on links
+Cypress.Commands.add('clicklink',(label)=>{
+    cy.get('a').contains(label).click()
+})
+
+// Custom command to overwrite the custom method of contains that is case sensitive
+Cypress.Commands.overwrite('contains',(originalFn,subject,text,filter,options)=>{
+    if(text === 'object'){
+        options = text
+        text = filter
+        filter =undefined
+    }
+    options.matchCase=false
+    return originalFn(subject,text,filter,options)
+})
